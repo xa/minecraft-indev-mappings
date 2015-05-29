@@ -14,9 +14,68 @@ CLASS net/minecraft/a/a/b net/minecraft/a/a/MobSpawner
 		ARG 0 level
 	METHOD a spawn ()V
 CLASS net/minecraft/a/a/g net/minecraft/a/a/Level
+	METHOD a playSound (FFFLjava/lang/String;FF)V
 	METHOD a spawnParticle (Ljava/lang/String;FFFFFF)V
 	METHOD a spawnEntity (Lnet/minecraft/a/c/b;)V
 	METHOD a playSound (Lnet/minecraft/a/c/b;Ljava/lang/String;FF)V
+	METHOD b setBlock (IIII)Z
+CLASS net/minecraft/a/b/a
+	FIELD as minableBlocks [Lnet/minecraft/a/a/b/x;
+	METHOD a mineBlock (Lnet/minecraft/a/a/b/x;)Z
+CLASS net/minecraft/a/b/b net/minecraft/game/item/ItemStew
+	METHOD a useItem (Lnet/minecraft/a/b/k;Lnet/minecraft/a/a/g;Lnet/minecraft/a/c/e/a;)Lnet/minecraft/a/b/k;
+CLASS net/minecraft/a/b/c
+	METHOD a getHardness ()I
+	METHOD b getBlockMiningSpeed (Lnet/minecraft/a/a/b/x;)F
+CLASS net/minecraft/a/b/d net/minecraft/game/item/ItemBlock
+	METHOD a onRightClick (Lnet/minecraft/a/b/k;Lnet/minecraft/a/a/g;IIII)Z
+CLASS net/minecraft/a/b/e net/minecraft/game/item/ItemBow
+	METHOD <init> (I)V
+		ARG 0 id
+	METHOD a useItem (Lnet/minecraft/a/b/k;Lnet/minecraft/a/a/g;Lnet/minecraft/a/c/e/a;)Lnet/minecraft/a/b/k;
+CLASS net/minecraft/a/b/f
+	METHOD a onRightClick (Lnet/minecraft/a/b/k;Lnet/minecraft/a/a/g;IIII)Z
+CLASS net/minecraft/a/b/g net/minecraft/game/item/ItemTool
+	FIELD as minableBlocks [Lnet/minecraft/a/a/b/x;
+	FIELD at miningSpeed F
+	FIELD au hardness I
+	METHOD a getHardness ()I
+	METHOD b getBlockMiningSpeed (Lnet/minecraft/a/a/b/x;)F
+CLASS net/minecraft/a/b/i net/minecraft/game/item/Item
+	FIELD A bowl Lnet/minecraft/a/b/i;
+	FIELD a rnd Ljava/util/Random;
+	FIELD ap id I
+	FIELD aq maxStackSize I
+	FIELD h bow Lnet/minecraft/a/b/i;
+	METHOD <init> (I)V
+		ARG 0 id
+	METHOD a getHardness ()I
+	METHOD a mineBlock (Lnet/minecraft/a/a/b/x;)Z
+	METHOD a onRightClick (Lnet/minecraft/a/b/k;Lnet/minecraft/a/a/g;IIII)Z
+	METHOD a useItem (Lnet/minecraft/a/b/k;Lnet/minecraft/a/a/g;Lnet/minecraft/a/c/e/a;)Lnet/minecraft/a/b/k;
+	METHOD b getBlockMiningSpeed (Lnet/minecraft/a/a/b/x;)F
+CLASS net/minecraft/a/b/k net/minecraft/game/item/ItemStack
+	FIELD a size I
+	METHOD b damageItem (I)V
+CLASS net/minecraft/a/b/l net/minecraft/game/item/ItemShovel
+	FIELD as minableBlocks [Lnet/minecraft/a/a/b/x;
+CLASS net/minecraft/a/b/m net/minecraft/game/item/ItemLighter
+	METHOD a onRightClick (Lnet/minecraft/a/b/k;Lnet/minecraft/a/a/g;IIII)Z
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 side
+CLASS net/minecraft/a/b/n
+	METHOD a onRightClick (Lnet/minecraft/a/b/k;Lnet/minecraft/a/a/g;IIII)Z
+CLASS net/minecraft/a/b/o net/minecraft/game/item/ItemPainting
+	METHOD a onRightClick (Lnet/minecraft/a/b/k;Lnet/minecraft/a/a/g;IIII)Z
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 side
+CLASS net/minecraft/a/b/p net/minecraft/game/item/ItemFood
+	FIELD as healAmount I
+	METHOD a useItem (Lnet/minecraft/a/b/k;Lnet/minecraft/a/a/g;Lnet/minecraft/a/c/e/a;)Lnet/minecraft/a/b/k;
 CLASS net/minecraft/a/c/a net/minecraft/game/entity/other/EntityPainting
 	METHOD a getName ()Ljava/lang/String;
 	METHOD a SaveNBT (Lcom/a/a/c;)V
@@ -78,17 +137,56 @@ CLASS net/minecraft/a/c/e net/minecraft/a/c/EntityLiving
 	METHOD a getName ()Ljava/lang/String;
 	METHOD a SaveNBT (Lcom/a/a/c;)V
 	METHOD a onHit (Lnet/minecraft/a/c/b;I)Z
+	METHOD b heal (I)V
 	METHOD b LoadNBT (Lcom/a/a/c;)V
 	METHOD b_ update ()V
 	METHOD g getLivingSound ()Ljava/lang/String;
 	METHOD h getHurtSound ()Ljava/lang/String;
 	METHOD i getDeathSound ()Ljava/lang/String;
 CLASS net/minecraft/a/a/b/a net/minecraft/a/a/b/BlockChest
+CLASS net/minecraft/a/a/b/c net/minecraft/a/a/b/BlockOre
+CLASS net/minecraft/a/a/b/d net/minecraft/a/a/b/BlockOreBlock
+CLASS net/minecraft/a/a/b/e net/minecraft/a/a/b/BlockGravel
+CLASS net/minecraft/a/a/b/f net/minecraft/a/a/b/BlockCrops
 CLASS net/minecraft/a/a/b/h net/minecraft/a/a/b/BlockTNT
+CLASS net/minecraft/a/a/b/k net/minecraft/a/a/b/BlockGears
+CLASS net/minecraft/a/a/b/m net/minecraft/a/a/b/BlockLiquid
 CLASS net/minecraft/a/a/b/n net/minecraft/a/a/b/Material
+CLASS net/minecraft/a/a/b/o net/minecraft/a/a/b/BlockLeaves
 CLASS net/minecraft/a/a/b/q net/minecraft/a/a/b/BlockContainer
+CLASS net/minecraft/a/a/b/r net/minecraft/a/a/b/BlockStone
+CLASS net/minecraft/a/a/b/s net/minecraft/a/a/b/BlockFurnace
+	FIELD a lit Z
+CLASS net/minecraft/a/a/b/t net/minecraft/a/a/b/BlockCrafting
+CLASS net/minecraft/a/a/b/u net/minecraft/a/a/b/BlockGlass
+CLASS net/minecraft/a/a/b/v net/minecraft/a/a/b/BlockShroom
+CLASS net/minecraft/a/a/b/w net/minecraft/a/a/b/BlockSand
 CLASS net/minecraft/a/a/b/x net/minecraft/a/a/b/Block
-	FIELD Q wool Lnet/minecraft/a/a/b/x;
+	FIELD A sponge Lnet/minecraft/a/a/b/x;
+	FIELD B glass Lnet/minecraft/a/a/b/x;
+	FIELD C woolRed Lnet/minecraft/a/a/b/x;
+	FIELD D woolOrange Lnet/minecraft/a/a/b/x;
+	FIELD E woolYellow Lnet/minecraft/a/a/b/x;
+	FIELD F woolLime Lnet/minecraft/a/a/b/x;
+	FIELD G woolGreen Lnet/minecraft/a/a/b/x;
+	FIELD H woolSorryImColorblind1 Lnet/minecraft/a/a/b/x;
+	FIELD I woolSorryImColorblind2 Lnet/minecraft/a/a/b/x;
+	FIELD J woolSorryImColorblind3 Lnet/minecraft/a/a/b/x;
+	FIELD K woolLightBlue Lnet/minecraft/a/a/b/x;
+	FIELD L woolBlue Lnet/minecraft/a/a/b/x;
+	FIELD M woolPurple Lnet/minecraft/a/a/b/x;
+	FIELD N woolLightPurple Lnet/minecraft/a/a/b/x;
+	FIELD O woolPink Lnet/minecraft/a/a/b/x;
+	FIELD P woolDarkGray Lnet/minecraft/a/a/b/x;
+	FIELD Q woolGray Lnet/minecraft/a/a/b/x;
+	FIELD R woolWhite Lnet/minecraft/a/a/b/x;
+	FIELD S dandelion Lnet/minecraft/a/a/b/ad;
+	FIELD T rose Lnet/minecraft/a/a/b/ad;
+	FIELD U brownShroom Lnet/minecraft/a/a/b/ad;
+	FIELD V redShroom Lnet/minecraft/a/a/b/ad;
+	FIELD W goldBlock Lnet/minecraft/a/a/b/x;
+	FIELD X ironBlock Lnet/minecraft/a/a/b/x;
+	FIELD Y doubleSlab Lnet/minecraft/a/a/b/x;
 	FIELD aA material Lnet/minecraft/a/a/b/n;
 	FIELD aD materialGravel Lnet/minecraft/a/a/b/n;
 	FIELD aE materialGrass Lnet/minecraft/a/a/b/n;
@@ -96,12 +194,51 @@ CLASS net/minecraft/a/a/b/x net/minecraft/a/a/b/Block
 	FIELD aI materialCloth Lnet/minecraft/a/a/b/n;
 	FIELD aJ materialSand Lnet/minecraft/a/a/b/n;
 	FIELD a materialStone Lnet/minecraft/a/a/b/n;
-	FIELD ag torch Lnet/minecraft/a/a/b/ah;
+	FIELD aa bricks Lnet/minecraft/a/a/b/x;
+	FIELD ab tnt Lnet/minecraft/a/a/b/x;
+	FIELD ac books Lnet/minecraft/a/a/b/x;
+	FIELD ad mossyCobble Lnet/minecraft/a/a/b/x;
+	FIELD ae obsidian Lnet/minecraft/a/a/b/x;
+	FIELD af torch Lnet/minecraft/a/a/b/x;
+	FIELD ag fire Lnet/minecraft/a/a/b/ah;
+	FIELD ah waterSource Lnet/minecraft/a/a/b/x;
+	FIELD ai lavaSource Lnet/minecraft/a/a/b/x;
+	FIELD aj chest Lnet/minecraft/a/a/b/x;
+	FIELD ak gears Lnet/minecraft/a/a/b/x;
+	FIELD al diamond Lnet/minecraft/a/a/b/x;
+	FIELD am diamondBlock Lnet/minecraft/a/a/b/x;
+	FIELD an crafting Lnet/minecraft/a/a/b/x;
+	FIELD ao crops Lnet/minecraft/a/a/b/x;
+	FIELD ap farmland Lnet/minecraft/a/a/b/x;
+	FIELD aq furnaceOff Lnet/minecraft/a/a/b/x;
+	FIELD ar furnaceOn Lnet/minecraft/a/a/b/x;
+	FIELD as textureIndex I
 	FIELD at id I
 	FIELD b materialWood Lnet/minecraft/a/a/b/n;
 	FIELD i stone Lnet/minecraft/a/a/b/x;
 	FIELD j grass Lnet/minecraft/a/a/b/af;
+	FIELD k dirt Lnet/minecraft/a/a/b/x;
+	FIELD l cobblestone Lnet/minecraft/a/a/b/x;
+	FIELD m planks Lnet/minecraft/a/a/b/x;
+	FIELD n sapling Lnet/minecraft/a/a/b/x;
+	FIELD o bedrock Lnet/minecraft/a/a/b/x;
+	FIELD p water Lnet/minecraft/a/a/b/x;
+	FIELD q water2 Lnet/minecraft/a/a/b/x;
+	FIELD r lava Lnet/minecraft/a/a/b/x;
+	FIELD s lava2 Lnet/minecraft/a/a/b/x;
+	FIELD t sand Lnet/minecraft/a/a/b/x;
+	FIELD u gravel Lnet/minecraft/a/a/b/x;
+	FIELD v goldOre Lnet/minecraft/a/a/b/x;
+	FIELD w ironOre Lnet/minecraft/a/a/b/x;
+	FIELD x coalOre Lnet/minecraft/a/a/b/x;
+	FIELD y wood Lnet/minecraft/a/a/b/x;
+	FIELD z leaves Lnet/minecraft/a/a/b/x;
+	METHOD a setExplosionResist (F)Lnet/minecraft/a/a/b/x;
+	METHOD b setHardness (F)Lnet/minecraft/a/a/b/x;
+CLASS net/minecraft/a/a/b/y net/minecraft/a/a/b/BlockBooks
+CLASS net/minecraft/a/a/b/z net/minecraft/a/a/b/BlockSapling
 CLASS net/minecraft/a/a/c/a net/minecraft/game/level/generator/LevelGenerator
+CLASS net/minecraft/a/a/d/c
 CLASS net/minecraft/a/c/a/a net/minecraft/game/entity/monster/EntityGiant
 	METHOD a getName ()Ljava/lang/String;
 CLASS net/minecraft/a/c/a/b net/minecraft/game/entity/monster/EntitySpider
@@ -161,13 +298,22 @@ CLASS net/minecraft/a/c/d/a net/minecraft/game/entity/other/EntityArrow
 	METHOD b LoadNBT (Lcom/a/a/c;)V
 	METHOD b_ update ()V
 CLASS net/minecraft/a/c/e/a net/minecraft/game/entity/player/EntityPlayer
+	FIELD b inventory Lnet/minecraft/a/c/e/b;
 	METHOD a getName ()Ljava/lang/String;
 	METHOD a SaveNBT (Lcom/a/a/c;)V
 	METHOD a onHit (Lnet/minecraft/a/c/b;I)Z
 	METHOD b LoadNBT (Lcom/a/a/c;)V
 CLASS net/minecraft/a/c/e/b net/minecraft/game/entity/player/ContainerInventory
+	METHOD c hasItem (I)Z
+CLASS net/minecraft/a/a/b/aa net/minecraft/a/a/b/BlockWood
+CLASS net/minecraft/a/a/b/ab net/minecraft/a/a/b/BlockFarmland
+CLASS net/minecraft/a/a/b/ac net/minecraft/a/a/b/BlockTorch
+CLASS net/minecraft/a/a/b/ad net/minecraft/a/a/b/BlockFlower
 CLASS net/minecraft/a/a/b/af net/minecraft/a/a/b/BlockGrass
-CLASS net/minecraft/a/a/b/ah net/minecraft/a/a/b/BlockTorch
+CLASS net/minecraft/a/a/b/ag net/minecraft/a/a/b/BlockSponge
+CLASS net/minecraft/a/a/b/ah net/minecraft/a/a/b/BlockFire
+CLASS net/minecraft/a/a/b/ai net/minecraft/a/a/b/BlockLiquidSource
+CLASS net/minecraft/a/a/b/aj net/minecraft/a/a/b/BlockSlab
 CLASS net/minecraft/client/d net/minecraft/client/Minecraft
 CLASS net/minecraft/client/e net/minecraft/client/OS
 	FIELD a LINUX Lnet/minecraft/client/e;
@@ -176,7 +322,12 @@ CLASS net/minecraft/client/e net/minecraft/client/OS
 	FIELD d MACOS Lnet/minecraft/client/e;
 	FIELD e UNKNOWN Lnet/minecraft/client/e;
 CLASS net/minecraft/client/h net/minecraft/client/Option
+CLASS net/minecraft/client/i net/minecraft/client/UselessClass
 CLASS net/minecraft/client/j net/minecraft/client/SoundDownloader
+CLASS net/minecraft/client/l net/minecraft/client/BlockList
+CLASS net/minecraft/client/m net/minecraft/client/CursorMover
+CLASS net/minecraft/client/o net/minecraft/client/OSValidator
+CLASS net/minecraft/client/p net/minecraft/client/SomeError
 CLASS net/minecraft/client/q net/minecraft/client/Options
 	FIELD i keyForward Lnet/minecraft/client/h;
 	FIELD j keyLeft Lnet/minecraft/client/h;
