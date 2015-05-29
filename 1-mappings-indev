@@ -1,0 +1,255 @@
+CLASS com/a/a/c com/a/a/NBT
+	METHOD a addValue (Ljava/lang/String;F)V
+	METHOD a addValue (Ljava/lang/String;Lcom/a/a/j;)V
+	METHOD a addValue (Ljava/lang/String;Ljava/lang/String;)V
+	METHOD a addValue (Ljava/lang/String;S)V
+	METHOD a saveValue (Ljava/lang/String;Z)V
+	METHOD j getValue (Ljava/lang/String;)Lcom/a/a/f;
+	METHOD k getValue (Ljava/lang/String;)Z
+CLASS net/minecraft/a/b net/minecraft/game/Container
+CLASS net/minecraft/a/a/a net/minecraft/a/a/LevelLoader
+CLASS net/minecraft/a/a/b net/minecraft/a/a/MobSpawner
+	FIELD a level Lnet/minecraft/a/a/g;
+	METHOD <init> (Lnet/minecraft/a/a/g;)V
+		ARG 0 level
+	METHOD a spawn ()V
+CLASS net/minecraft/a/a/g net/minecraft/a/a/Level
+	METHOD a spawnParticle (Ljava/lang/String;FFFFFF)V
+	METHOD a spawnEntity (Lnet/minecraft/a/c/b;)V
+	METHOD a playSound (Lnet/minecraft/a/c/b;Ljava/lang/String;FF)V
+CLASS net/minecraft/a/c/a net/minecraft/game/entity/other/EntityPainting
+	METHOD a getName ()Ljava/lang/String;
+	METHOD a SaveNBT (Lcom/a/a/c;)V
+	METHOD a onHit (Lnet/minecraft/a/c/b;I)Z
+	METHOD b LoadNBT (Lcom/a/a/c;)V
+	METHOD b_ update ()V
+CLASS net/minecraft/a/c/b net/minecraft/game/entity/Entity
+	FIELD G rnd Ljava/util/Random;
+	FIELD J fire I
+	FIELD M air I
+	FIELD b fallDistance F
+	FIELD d level Lnet/minecraft/a/a/g;
+	FIELD e prevPosX F
+	FIELD f prevPosY F
+	FIELD g prevPosZ F
+	FIELD h posX F
+	FIELD i posY F
+	FIELD j posZ F
+	FIELD k motionX F
+	FIELD l motionY F
+	FIELD m motionZ F
+	FIELD n pitch F
+	FIELD o yaw F
+	METHOD a getName ()Ljava/lang/String;
+	METHOD a dropItem (IIF)Lnet/minecraft/a/c/c/b;
+	METHOD a SaveNBT (Lcom/a/a/c;)V
+	METHOD a onHit (Lnet/minecraft/a/c/b;I)Z
+	METHOD b LoadNBT (Lcom/a/a/c;)V
+	METHOD b_ update ()V
+	METHOD c saveNBT (Lcom/a/a/c;)V
+	METHOD d loadNBT (Lcom/a/a/c;)V
+CLASS net/minecraft/a/c/d net/minecraft/game/entity/other/Paintings
+	FIELD a KEBAB Lnet/minecraft/a/c/d;
+	FIELD b NAME Ljava/lang/String;
+	FIELD c START_X I
+	FIELD d START_Y I
+	FIELD e WIDTH I
+	FIELD f HEIGHT I
+	FIELD g AZTEC Lnet/minecraft/a/c/d;
+	FIELD h ALBAN Lnet/minecraft/a/c/d;
+	FIELD i AZTEC2 Lnet/minecraft/a/c/d;
+	FIELD j BOMB Lnet/minecraft/a/c/d;
+	FIELD k PLANT Lnet/minecraft/a/c/d;
+	FIELD l WASTELAND Lnet/minecraft/a/c/d;
+	FIELD m POOL Lnet/minecraft/a/c/d;
+	FIELD n COURBET Lnet/minecraft/a/c/d;
+	FIELD o SEA Lnet/minecraft/a/c/d;
+	FIELD p SUNSET Lnet/minecraft/a/c/d;
+	FIELD q WANDERER Lnet/minecraft/a/c/d;
+	FIELD r MATCH Lnet/minecraft/a/c/d;
+	FIELD s BUST Lnet/minecraft/a/c/d;
+	FIELD t STAGE Lnet/minecraft/a/c/d;
+	FIELD u VOID Lnet/minecraft/a/c/d;
+	FIELD v SKULLANDROSES Lnet/minecraft/a/c/d;
+	FIELD w FIGHTERS Lnet/minecraft/a/c/d;
+	FIELD x POINTER Lnet/minecraft/a/c/d;
+CLASS net/minecraft/a/c/e net/minecraft/a/c/EntityLiving
+	FIELD V texture Ljava/lang/String;
+	METHOD a getName ()Ljava/lang/String;
+	METHOD a SaveNBT (Lcom/a/a/c;)V
+	METHOD a onHit (Lnet/minecraft/a/c/b;I)Z
+	METHOD b LoadNBT (Lcom/a/a/c;)V
+	METHOD b_ update ()V
+	METHOD g getLivingSound ()Ljava/lang/String;
+	METHOD h getHurtSound ()Ljava/lang/String;
+	METHOD i getDeathSound ()Ljava/lang/String;
+CLASS net/minecraft/a/a/b/a net/minecraft/a/a/b/BlockChest
+CLASS net/minecraft/a/a/b/h net/minecraft/a/a/b/BlockTNT
+CLASS net/minecraft/a/a/b/n net/minecraft/a/a/b/Material
+CLASS net/minecraft/a/a/b/q net/minecraft/a/a/b/BlockContainer
+CLASS net/minecraft/a/a/b/x net/minecraft/a/a/b/Block
+	FIELD Q wool Lnet/minecraft/a/a/b/x;
+	FIELD aA material Lnet/minecraft/a/a/b/n;
+	FIELD aD materialGravel Lnet/minecraft/a/a/b/n;
+	FIELD aE materialGrass Lnet/minecraft/a/a/b/n;
+	FIELD aF materialRock Lnet/minecraft/a/a/b/n;
+	FIELD aI materialCloth Lnet/minecraft/a/a/b/n;
+	FIELD aJ materialSand Lnet/minecraft/a/a/b/n;
+	FIELD a materialStone Lnet/minecraft/a/a/b/n;
+	FIELD ag torch Lnet/minecraft/a/a/b/ah;
+	FIELD at id I
+	FIELD b materialWood Lnet/minecraft/a/a/b/n;
+	FIELD i stone Lnet/minecraft/a/a/b/x;
+	FIELD j grass Lnet/minecraft/a/a/b/af;
+CLASS net/minecraft/a/a/c/a net/minecraft/game/level/generator/LevelGenerator
+CLASS net/minecraft/a/c/a/a net/minecraft/game/entity/monster/EntityGiant
+	METHOD a getName ()Ljava/lang/String;
+CLASS net/minecraft/a/c/a/b net/minecraft/game/entity/monster/EntitySpider
+	METHOD a getName ()Ljava/lang/String;
+	METHOD a SaveNBT (Lcom/a/a/c;)V
+	METHOD b LoadNBT (Lcom/a/a/c;)V
+CLASS net/minecraft/a/c/a/c net/minecraft/game/entity/monster/EntitySkeleton
+	METHOD a getName ()Ljava/lang/String;
+	METHOD a SaveNBT (Lcom/a/a/c;)V
+	METHOD b LoadNBT (Lcom/a/a/c;)V
+CLASS net/minecraft/a/c/a/d net/minecraft/game/entity/monster/EntityCreeper
+	METHOD a getName ()Ljava/lang/String;
+	METHOD a SaveNBT (Lcom/a/a/c;)V
+	METHOD b LoadNBT (Lcom/a/a/c;)V
+CLASS net/minecraft/a/c/a/e net/minecraft/game/entity/monster/EntityMonster
+	FIELD a maxHealth I
+	METHOD a getName ()Ljava/lang/String;
+	METHOD a SaveNBT (Lcom/a/a/c;)V
+	METHOD a onHit (Lnet/minecraft/a/c/b;I)Z
+	METHOD b LoadNBT (Lcom/a/a/c;)V
+	METHOD b_ update ()V
+CLASS net/minecraft/a/c/a/f net/minecraft/game/entity/monster/EntityZombie
+	METHOD a getName ()Ljava/lang/String;
+CLASS net/minecraft/a/c/b/a net/minecraft/game/entity/animal/EntityAnimal
+	METHOD a SaveNBT (Lcom/a/a/c;)V
+	METHOD b LoadNBT (Lcom/a/a/c;)V
+CLASS net/minecraft/a/c/b/b net/minecraft/game/entity/animal/EntitySheep
+	FIELD a sheared Z
+	METHOD a getName ()Ljava/lang/String;
+	METHOD a SaveNBT (Lcom/a/a/c;)V
+	METHOD a onHit (Lnet/minecraft/a/c/b;I)Z
+	METHOD b LoadNBT (Lcom/a/a/c;)V
+	METHOD g getLivingSound ()Ljava/lang/String;
+	METHOD h getHurtSound ()Ljava/lang/String;
+	METHOD i getDeathSound ()Ljava/lang/String;
+CLASS net/minecraft/a/c/b/c net/minecraft/game/entity/animal/EntityPig
+	METHOD a getName ()Ljava/lang/String;
+	METHOD a SaveNBT (Lcom/a/a/c;)V
+	METHOD b LoadNBT (Lcom/a/a/c;)V
+	METHOD g getLivingSound ()Ljava/lang/String;
+	METHOD h getHurtSound ()Ljava/lang/String;
+	METHOD i getDeathSound ()Ljava/lang/String;
+CLASS net/minecraft/a/c/c/a net/minecraft/game/entity/other/EntityTNT
+	METHOD a getName ()Ljava/lang/String;
+	METHOD a SaveNBT (Lcom/a/a/c;)V
+	METHOD b LoadNBT (Lcom/a/a/c;)V
+	METHOD b_ update ()V
+CLASS net/minecraft/a/c/c/b net/minecraft/game/entity/other/EntityItem
+	METHOD a getName ()Ljava/lang/String;
+	METHOD a SaveNBT (Lcom/a/a/c;)V
+	METHOD a onHit (Lnet/minecraft/a/c/b;I)Z
+	METHOD b LoadNBT (Lcom/a/a/c;)V
+	METHOD b_ update ()V
+CLASS net/minecraft/a/c/d/a net/minecraft/game/entity/other/EntityArrow
+	METHOD a getName ()Ljava/lang/String;
+	METHOD a SaveNBT (Lcom/a/a/c;)V
+	METHOD b LoadNBT (Lcom/a/a/c;)V
+	METHOD b_ update ()V
+CLASS net/minecraft/a/c/e/a net/minecraft/game/entity/player/EntityPlayer
+	METHOD a getName ()Ljava/lang/String;
+	METHOD a SaveNBT (Lcom/a/a/c;)V
+	METHOD a onHit (Lnet/minecraft/a/c/b;I)Z
+	METHOD b LoadNBT (Lcom/a/a/c;)V
+CLASS net/minecraft/a/c/e/b net/minecraft/game/entity/player/ContainerInventory
+CLASS net/minecraft/a/a/b/af net/minecraft/a/a/b/BlockGrass
+CLASS net/minecraft/a/a/b/ah net/minecraft/a/a/b/BlockTorch
+CLASS net/minecraft/client/d net/minecraft/client/Minecraft
+CLASS net/minecraft/client/e net/minecraft/client/OS
+	FIELD a LINUX Lnet/minecraft/client/e;
+	FIELD b SOLARIS Lnet/minecraft/client/e;
+	FIELD c WINDOWS Lnet/minecraft/client/e;
+	FIELD d MACOS Lnet/minecraft/client/e;
+	FIELD e UNKNOWN Lnet/minecraft/client/e;
+CLASS net/minecraft/client/h net/minecraft/client/Option
+CLASS net/minecraft/client/j net/minecraft/client/SoundDownloader
+CLASS net/minecraft/client/q net/minecraft/client/Options
+	FIELD i keyForward Lnet/minecraft/client/h;
+	FIELD j keyLeft Lnet/minecraft/client/h;
+	FIELD k keyBack Lnet/minecraft/client/h;
+	FIELD l keyRight Lnet/minecraft/client/h;
+	FIELD m keyJump Lnet/minecraft/client/h;
+	FIELD n keyInventory Lnet/minecraft/client/h;
+	FIELD o keyDrop Lnet/minecraft/client/h;
+	FIELD p keyFog Lnet/minecraft/client/h;
+	FIELD q keySave Lnet/minecraft/client/h;
+	FIELD r keyLoad Lnet/minecraft/client/h;
+	FIELD y keyChat Lnet/minecraft/client/h;
+CLASS net/minecraft/client/r net/minecraft/client/GuiMainMenu
+	FIELD i splash [Ljava/lang/String;
+	FIELD j currentSplash Ljava/lang/String;
+CLASS net/minecraft/a/a/b/a/b net/minecraft/a/a/b/a/BlockFurnace
+CLASS net/minecraft/client/a/d net/minecraft/client/a/Tesselator
+	METHOD a draw (FFF)V
+	METHOD a draw (FFFFF)V
+CLASS net/minecraft/client/c/a net/minecraft/client/gui/Button2
+CLASS net/minecraft/client/c/b net/minecraft/client/gui/GuiPause
+CLASS net/minecraft/client/c/d net/minecraft/client/gui/GuiGameOver
+CLASS net/minecraft/client/c/e net/minecraft/client/gui/GuiLoad
+CLASS net/minecraft/client/c/g net/minecraft/client/gui/GuiOptions
+	FIELD a previousGui Lnet/minecraft/client/c/i;
+	FIELD i name Ljava/lang/String;
+CLASS net/minecraft/client/c/i net/minecraft/client/gui/GuiWithButtons
+	FIELD e buttons Ljava/util/List;
+CLASS net/minecraft/client/c/k net/minecraft/client/gui/Gui
+	METHOD a drawString (Lnet/minecraft/client/c/j;Ljava/lang/String;III)V
+	METHOD b drawTexture (IIIIII)V
+CLASS net/minecraft/client/c/l net/minecraft/client/gui/GuiOverlay
+CLASS net/minecraft/client/c/o net/minecraft/client/gui/GuiSave2
+CLASS net/minecraft/client/c/p net/minecraft/client/gui/GuiSave
+CLASS net/minecraft/client/c/q net/minecraft/client/gui/FilenameFilterLevel
+CLASS net/minecraft/client/c/r net/minecraft/client/gui/Button
+CLASS net/minecraft/client/f/a net/minecraft/client/particle/ParticleBubble
+	METHOD b_ update ()V
+CLASS net/minecraft/client/f/b net/minecraft/client/particle/Particle2
+	METHOD a renderParticle (Lnet/minecraft/client/a/d;FFFFFF)V
+CLASS net/minecraft/client/f/c net/minecraft/client/particle/ParticleFlame
+	METHOD a renderParticle (Lnet/minecraft/client/a/d;FFFFFF)V
+	METHOD b_ update ()V
+CLASS net/minecraft/client/f/d net/minecraft/client/particle/ParticleBreak
+CLASS net/minecraft/client/f/e net/minecraft/client/particle/Particle3
+	METHOD a renderParticle (Lnet/minecraft/client/a/d;FFFFFF)V
+	METHOD b_ update ()V
+CLASS net/minecraft/client/f/f net/minecraft/client/particle/ParticleSplash
+CLASS net/minecraft/client/f/g net/minecraft/client/particle/ParticleLava
+	METHOD a renderParticle (Lnet/minecraft/client/a/d;FFFFFF)V
+	METHOD b_ update ()V
+CLASS net/minecraft/client/f/h net/minecraft/client/particle/ParticleExplode
+	METHOD a renderParticle (Lnet/minecraft/client/a/d;FFFFFF)V
+	METHOD b_ update ()V
+CLASS net/minecraft/client/f/i net/minecraft/client/particle/Particle1
+	METHOD a renderParticle (Lnet/minecraft/client/a/d;FFFFFF)V
+	METHOD b_ update ()V
+CLASS net/minecraft/client/f/j net/minecraft/client/particle/ParticleSmoke
+	METHOD a renderParticle (Lnet/minecraft/client/a/d;FFFFFF)V
+	METHOD b_ update ()V
+CLASS net/minecraft/client/f/k net/minecraft/client/particle/ParticleBase
+	FIELD O z F
+	FIELD a x F
+	FIELD b y F
+	METHOD a getName ()Ljava/lang/String;
+	METHOD a SaveNBT (Lcom/a/a/c;)V
+	METHOD a renderParticle (Lnet/minecraft/client/a/d;FFFFFF)V
+	METHOD b LoadNBT (Lcom/a/a/c;)V
+	METHOD b_ update ()V
+CLASS net/minecraft/client/g/a net/minecraft/client/g/EntityLocalPlayer
+	METHOD a getName ()Ljava/lang/String;
+	METHOD a SaveNBT (Lcom/a/a/c;)V
+	METHOD b LoadNBT (Lcom/a/a/c;)V
+CLASS net/minecraft/client/MinecraftApplet
+	FIELD a canvas Ljava/awt/Canvas;
+	FIELD c thread Ljava/lang/Thread;
