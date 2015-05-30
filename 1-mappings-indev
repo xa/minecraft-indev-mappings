@@ -1,30 +1,57 @@
+CLASS a/a net/minecraft/game/MathHelper
+CLASS a/b net/minecraft/client/gui/GuiLoading
 CLASS com/a/a/c com/a/a/NBT
+	METHOD a addValue (Ljava/lang/String;B)V
 	METHOD a addValue (Ljava/lang/String;F)V
 	METHOD a addValue (Ljava/lang/String;Lcom/a/a/j;)V
 	METHOD a addValue (Ljava/lang/String;Ljava/lang/String;)V
 	METHOD a addValue (Ljava/lang/String;S)V
 	METHOD a saveValue (Ljava/lang/String;Z)V
+	METHOD b getValue (Ljava/lang/String;)B
+	METHOD c getValue (Ljava/lang/String;)S
 	METHOD j getValue (Ljava/lang/String;)Lcom/a/a/f;
 	METHOD k getValue (Ljava/lang/String;)Z
-CLASS net/minecraft/a/b net/minecraft/game/Container
-CLASS net/minecraft/a/a/a net/minecraft/a/a/LevelLoader
-CLASS net/minecraft/a/a/b net/minecraft/a/a/MobSpawner
+CLASS net/minecraft/a/a net/minecraft/client/inventory/InventoryBase
+	METHOD b getName ()Ljava/lang/String;
+	METHOD c getMaxItemStack ()I
+CLASS net/minecraft/a/b net/minecraft/client/inventory/Inventory
+	METHOD b getName ()Ljava/lang/String;
+	METHOD c getMaxItemStack ()I
+CLASS net/minecraft/a/a/a net/minecraft/game/level/LevelLoader
+	METHOD a load (Ljava/io/InputStream;)Lnet/minecraft/a/a/g;
+CLASS net/minecraft/a/a/b net/minecraft/game/level/MobSpawner
 	FIELD a level Lnet/minecraft/a/a/g;
 	METHOD <init> (Lnet/minecraft/a/a/g;)V
 		ARG 0 level
 	METHOD a spawn ()V
-CLASS net/minecraft/a/a/g net/minecraft/a/a/Level
+CLASS net/minecraft/a/a/c net/minecraft/game/level/Unknown1
+CLASS net/minecraft/a/a/d net/minecraft/game/level/Unknown2
+CLASS net/minecraft/a/a/e net/minecraft/game/level/Unknown3
+CLASS net/minecraft/a/a/g net/minecraft/game/level/Level
+	FIELD E type I
+	FIELD O blocks [S
+	FIELD i maxX I
+	FIELD j maxY I
+	FIELD k maxZ I
+	FIELD m defaultFluid I
+	METHOD a load ()V
 	METHOD a playSound (FFFLjava/lang/String;FF)V
+	METHOD a generate (III[B[B)V
 	METHOD a spawnParticle (Ljava/lang/String;FFFFFF)V
 	METHOD a spawnEntity (Lnet/minecraft/a/c/b;)V
+	METHOD a explode (Lnet/minecraft/a/c/b;FFFF)V
 	METHOD a playSound (Lnet/minecraft/a/c/b;Ljava/lang/String;FF)V
 	METHOD b setBlock (IIII)Z
-CLASS net/minecraft/a/b/a
+	METHOD d getLight (III)B
+	METHOD i removeContainer (III)V
+CLASS net/minecraft/a/a/h net/minecraft/game/level/Unknown4
+CLASS net/minecraft/a/a/i net/minecraft/game/level/EntitiesInLevel
+CLASS net/minecraft/a/b/a net/minecraft/game/item/ItemPickaxe
 	FIELD as minableBlocks [Lnet/minecraft/a/a/b/x;
 	METHOD a mineBlock (Lnet/minecraft/a/a/b/x;)Z
 CLASS net/minecraft/a/b/b net/minecraft/game/item/ItemStew
 	METHOD a useItem (Lnet/minecraft/a/b/k;Lnet/minecraft/a/a/g;Lnet/minecraft/a/c/e/a;)Lnet/minecraft/a/b/k;
-CLASS net/minecraft/a/b/c
+CLASS net/minecraft/a/b/c net/minecraft/game/item/ItemSword
 	METHOD a getHardness ()I
 	METHOD b getBlockMiningSpeed (Lnet/minecraft/a/a/b/x;)F
 CLASS net/minecraft/a/b/d net/minecraft/game/item/ItemBlock
@@ -33,7 +60,7 @@ CLASS net/minecraft/a/b/e net/minecraft/game/item/ItemBow
 	METHOD <init> (I)V
 		ARG 0 id
 	METHOD a useItem (Lnet/minecraft/a/b/k;Lnet/minecraft/a/a/g;Lnet/minecraft/a/c/e/a;)Lnet/minecraft/a/b/k;
-CLASS net/minecraft/a/b/f
+CLASS net/minecraft/a/b/f net/minecraft/game/item/ItemCrops
 	METHOD a onRightClick (Lnet/minecraft/a/b/k;Lnet/minecraft/a/a/g;IIII)Z
 CLASS net/minecraft/a/b/g net/minecraft/game/item/ItemTool
 	FIELD as minableBlocks [Lnet/minecraft/a/a/b/x;
@@ -41,12 +68,78 @@ CLASS net/minecraft/a/b/g net/minecraft/game/item/ItemTool
 	FIELD au hardness I
 	METHOD a getHardness ()I
 	METHOD b getBlockMiningSpeed (Lnet/minecraft/a/a/b/x;)F
+CLASS net/minecraft/a/b/h net/minecraft/game/item/ItemAxe
 CLASS net/minecraft/a/b/i net/minecraft/game/item/Item
 	FIELD A bowl Lnet/minecraft/a/b/i;
+	FIELD B stew Lnet/minecraft/a/b/i;
+	FIELD C goldenSword Lnet/minecraft/a/b/i;
+	FIELD D goldenShovel Lnet/minecraft/a/b/i;
+	FIELD E goldenPickaxe Lnet/minecraft/a/b/i;
+	FIELD F goldenAxe Lnet/minecraft/a/b/i;
+	FIELD G string Lnet/minecraft/a/b/i;
+	FIELD H feather Lnet/minecraft/a/b/i;
+	FIELD I gunpowder Lnet/minecraft/a/b/i;
+	FIELD J woodenHoe Lnet/minecraft/a/b/i;
+	FIELD K stoneHoe Lnet/minecraft/a/b/i;
+	FIELD L ironHoe Lnet/minecraft/a/b/i;
+	FIELD M diamondHoe Lnet/minecraft/a/b/i;
+	FIELD N goldenHoe Lnet/minecraft/a/b/i;
+	FIELD O crops Lnet/minecraft/a/b/i;
+	FIELD P wheat Lnet/minecraft/a/b/i;
+	FIELD Q bread Lnet/minecraft/a/b/i;
+	FIELD R helmetCloth Lnet/minecraft/a/b/i;
+	FIELD S chestplateCloth Lnet/minecraft/a/b/i;
+	FIELD T legsCloth Lnet/minecraft/a/b/i;
+	FIELD U bootsCloth Lnet/minecraft/a/b/i;
+	FIELD V helmetChain Lnet/minecraft/a/b/i;
+	FIELD W chestplateChain Lnet/minecraft/a/b/i;
+	FIELD X legsChain Lnet/minecraft/a/b/i;
+	FIELD Y bootsChain Lnet/minecraft/a/b/i;
+	FIELD Z helmetIron Lnet/minecraft/a/b/i;
 	FIELD a rnd Ljava/util/Random;
+	FIELD aa chestplateIron Lnet/minecraft/a/b/i;
+	FIELD ab legsIron Lnet/minecraft/a/b/i;
+	FIELD ac bootsIron Lnet/minecraft/a/b/i;
+	FIELD ad diamondHelmet Lnet/minecraft/a/b/i;
+	FIELD ae diamondChestplate Lnet/minecraft/a/b/i;
+	FIELD af diamondLegs Lnet/minecraft/a/b/i;
+	FIELD ag diamondBoots Lnet/minecraft/a/b/i;
+	FIELD ah goldenHelmet Lnet/minecraft/a/b/i;
+	FIELD ai goldenChestplate Lnet/minecraft/a/b/i;
+	FIELD aj goldenLegs Lnet/minecraft/a/b/i;
+	FIELD ak goldenBoots Lnet/minecraft/a/b/i;
+	FIELD al flint Lnet/minecraft/a/b/i;
+	FIELD am rawPork Lnet/minecraft/a/b/i;
+	FIELD an cookedPork Lnet/minecraft/a/b/i;
+	FIELD ao painting Lnet/minecraft/a/b/i;
 	FIELD ap id I
 	FIELD aq maxStackSize I
-	FIELD h bow Lnet/minecraft/a/b/i;
+	FIELD as textureIndex I
+	FIELD b itemsArray [Lnet/minecraft/a/b/i;
+	FIELD c ironShovel Lnet/minecraft/a/b/i;
+	FIELD d ironPickaxe Lnet/minecraft/a/b/i;
+	FIELD e ironAxe Lnet/minecraft/a/b/i;
+	FIELD f lighter Lnet/minecraft/a/b/i;
+	FIELD g bow Lnet/minecraft/a/b/i;
+	FIELD h arrow Lnet/minecraft/a/b/i;
+	FIELD i coal Lnet/minecraft/a/b/i;
+	FIELD j diamond Lnet/minecraft/a/b/i;
+	FIELD k iron Lnet/minecraft/a/b/i;
+	FIELD l gold Lnet/minecraft/a/b/i;
+	FIELD m ironSword Lnet/minecraft/a/b/i;
+	FIELD n woodSword Lnet/minecraft/a/b/i;
+	FIELD o woodShovel Lnet/minecraft/a/b/i;
+	FIELD p woodPickaxe Lnet/minecraft/a/b/i;
+	FIELD q woodAxe Lnet/minecraft/a/b/i;
+	FIELD r stoneSword Lnet/minecraft/a/b/i;
+	FIELD s stoneShovel Lnet/minecraft/a/b/i;
+	FIELD t stonePickaxe Lnet/minecraft/a/b/i;
+	FIELD u stoneAxe Lnet/minecraft/a/b/i;
+	FIELD v diamondSword Lnet/minecraft/a/b/i;
+	FIELD w diamondShovel Lnet/minecraft/a/b/i;
+	FIELD x diamondPickaxe Lnet/minecraft/a/b/i;
+	FIELD y diamondAxe Lnet/minecraft/a/b/i;
+	FIELD z stick Lnet/minecraft/a/b/i;
 	METHOD <init> (I)V
 		ARG 0 id
 	METHOD a getHardness ()I
@@ -54,6 +147,7 @@ CLASS net/minecraft/a/b/i net/minecraft/game/item/Item
 	METHOD a onRightClick (Lnet/minecraft/a/b/k;Lnet/minecraft/a/a/g;IIII)Z
 	METHOD a useItem (Lnet/minecraft/a/b/k;Lnet/minecraft/a/a/g;Lnet/minecraft/a/c/e/a;)Lnet/minecraft/a/b/k;
 	METHOD b getBlockMiningSpeed (Lnet/minecraft/a/a/b/x;)F
+CLASS net/minecraft/a/b/j net/minecraft/game/item/ItemArmor
 CLASS net/minecraft/a/b/k net/minecraft/game/item/ItemStack
 	FIELD a size I
 	METHOD b damageItem (I)V
@@ -65,7 +159,7 @@ CLASS net/minecraft/a/b/m net/minecraft/game/item/ItemLighter
 		ARG 3 y
 		ARG 4 z
 		ARG 5 side
-CLASS net/minecraft/a/b/n
+CLASS net/minecraft/a/b/n net/minecraft/game/item/ItemHoe
 	METHOD a onRightClick (Lnet/minecraft/a/b/k;Lnet/minecraft/a/a/g;IIII)Z
 CLASS net/minecraft/a/b/o net/minecraft/game/item/ItemPainting
 	METHOD a onRightClick (Lnet/minecraft/a/b/k;Lnet/minecraft/a/a/g;IIII)Z
@@ -86,6 +180,7 @@ CLASS net/minecraft/a/c/b net/minecraft/game/entity/Entity
 	FIELD G rnd Ljava/util/Random;
 	FIELD J fire I
 	FIELD M air I
+	FIELD N texture Ljava/lang/String;
 	FIELD b fallDistance F
 	FIELD d level Lnet/minecraft/a/a/g;
 	FIELD e prevPosX F
@@ -99,6 +194,7 @@ CLASS net/minecraft/a/c/b net/minecraft/game/entity/Entity
 	FIELD m motionZ F
 	FIELD n pitch F
 	FIELD o yaw F
+	FIELD v eyeHeight F
 	METHOD a getName ()Ljava/lang/String;
 	METHOD a dropItem (IIF)Lnet/minecraft/a/c/c/b;
 	METHOD a SaveNBT (Lcom/a/a/c;)V
@@ -107,6 +203,7 @@ CLASS net/minecraft/a/c/b net/minecraft/game/entity/Entity
 	METHOD b_ update ()V
 	METHOD c saveNBT (Lcom/a/a/c;)V
 	METHOD d loadNBT (Lcom/a/a/c;)V
+CLASS net/minecraft/a/c/c net/minecraft/game/entity/Entity_
 CLASS net/minecraft/a/c/d net/minecraft/game/entity/other/Paintings
 	FIELD a KEBAB Lnet/minecraft/a/c/d;
 	FIELD b NAME Ljava/lang/String;
@@ -132,36 +229,110 @@ CLASS net/minecraft/a/c/d net/minecraft/game/entity/other/Paintings
 	FIELD v SKULLANDROSES Lnet/minecraft/a/c/d;
 	FIELD w FIGHTERS Lnet/minecraft/a/c/d;
 	FIELD x POINTER Lnet/minecraft/a/c/d;
-CLASS net/minecraft/a/c/e net/minecraft/a/c/EntityLiving
+CLASS net/minecraft/a/c/e net/minecraft/game/entity/EntityLiving
 	FIELD V texture Ljava/lang/String;
+	FIELD W health I
+	FIELD Y hurtTime I
+	FIELD ab deathTime I
+	FIELD ac attackTime I
 	METHOD a getName ()Ljava/lang/String;
 	METHOD a SaveNBT (Lcom/a/a/c;)V
 	METHOD a onHit (Lnet/minecraft/a/c/b;I)Z
 	METHOD b heal (I)V
 	METHOD b LoadNBT (Lcom/a/a/c;)V
 	METHOD b_ update ()V
+	METHOD f updateEntity ()V
 	METHOD g getLivingSound ()Ljava/lang/String;
 	METHOD h getHurtSound ()Ljava/lang/String;
 	METHOD i getDeathSound ()Ljava/lang/String;
-CLASS net/minecraft/a/a/b/a net/minecraft/a/a/b/BlockChest
-CLASS net/minecraft/a/a/b/c net/minecraft/a/a/b/BlockOre
-CLASS net/minecraft/a/a/b/d net/minecraft/a/a/b/BlockOreBlock
-CLASS net/minecraft/a/a/b/e net/minecraft/a/a/b/BlockGravel
-CLASS net/minecraft/a/a/b/f net/minecraft/a/a/b/BlockCrops
-CLASS net/minecraft/a/a/b/h net/minecraft/a/a/b/BlockTNT
-CLASS net/minecraft/a/a/b/k net/minecraft/a/a/b/BlockGears
-CLASS net/minecraft/a/a/b/m net/minecraft/a/a/b/BlockLiquid
-CLASS net/minecraft/a/a/b/n net/minecraft/a/a/b/Material
-CLASS net/minecraft/a/a/b/o net/minecraft/a/a/b/BlockLeaves
-CLASS net/minecraft/a/a/b/q net/minecraft/a/a/b/BlockContainer
-CLASS net/minecraft/a/a/b/r net/minecraft/a/a/b/BlockStone
-CLASS net/minecraft/a/a/b/s net/minecraft/a/a/b/BlockFurnace
+CLASS net/minecraft/a/a/b/a net/minecraft/game/block/BlockChest
+	METHOD a getTextureFromSide (I)I
+	METHOD a canBlockStayAt (Lnet/minecraft/a/a/g;III)Z
+	METHOD a onRightClick (Lnet/minecraft/a/a/g;IIILnet/minecraft/a/c/e/a;)Z
+	METHOD a_ getContainer ()Lnet/minecraft/a/a/b/a/a;
+	METHOD b onBreak (Lnet/minecraft/a/a/g;III)V
+CLASS net/minecraft/a/a/b/b net/minecraft/game/block/BlockLiquid2
+	METHOD a onRandomTick (Lnet/minecraft/a/a/g;IIILjava/util/Random;)V
+CLASS net/minecraft/a/a/b/c net/minecraft/game/block/BlockOre
+	METHOD a getItemDropped (ILjava/util/Random;)I
+	METHOD a quantityDropped (Ljava/util/Random;)I
+CLASS net/minecraft/a/a/b/d net/minecraft/game/block/BlockOreBlock
+	METHOD a getTextureFromSide (I)I
+CLASS net/minecraft/a/a/b/e net/minecraft/game/block/BlockGravel
+	METHOD a getItemDropped (ILjava/util/Random;)I
+CLASS net/minecraft/a/a/b/f net/minecraft/game/block/BlockCrops
+	METHOD a getTexture (II)I
+		ARG 0 side
+		ARG 1 meta
+	METHOD a getItemDropped (ILjava/util/Random;)I
+		ARG 0 meta
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a onRandomTick (Lnet/minecraft/a/a/g;IIILjava/util/Random;)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+	METHOD b getSoil (I)Z
+		ARG 0 id
+	METHOD c onBlockBreak (Lnet/minecraft/a/a/g;IIII)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+		ARG 4 meta
+CLASS net/minecraft/a/a/b/g net/minecraft/game/block/BlockLeaves_
+CLASS net/minecraft/a/a/b/h net/minecraft/game/block/BlockTNT
+	METHOD a getTextureFromSide (I)I
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD c onBlockBreak (Lnet/minecraft/a/a/g;IIII)V
+CLASS net/minecraft/a/a/b/i net/minecraft/game/block/MaterialGravel
+	METHOD a getStepSound ()Ljava/lang/String;
+CLASS net/minecraft/a/a/b/j net/minecraft/game/block/MaterialGlass
+	METHOD a getStepSound ()Ljava/lang/String;
+CLASS net/minecraft/a/a/b/k net/minecraft/game/block/BlockGears
+	METHOD a quantityDropped (Ljava/util/Random;)I
+CLASS net/minecraft/a/a/b/l net/minecraft/game/block/BlockUseless
+CLASS net/minecraft/a/a/b/m net/minecraft/game/block/BlockLiquid
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a onRandomTick (Lnet/minecraft/a/a/g;IIILjava/util/Random;)V
+	METHOD d onPlaced (Lnet/minecraft/a/a/g;III)V
+CLASS net/minecraft/a/a/b/n net/minecraft/game/block/Material
+	FIELD c sound Ljava/lang/String;
+	METHOD a getStepSound ()Ljava/lang/String;
+	METHOD b getStepSound2 ()Ljava/lang/String;
+CLASS net/minecraft/a/a/b/o net/minecraft/game/block/BlockLeaves
+	METHOD a getItemDropped (ILjava/util/Random;)I
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a onRandomTick (Lnet/minecraft/a/a/g;IIILjava/util/Random;)V
+CLASS net/minecraft/a/a/b/p net/minecraft/game/block/BlockLiquidBase
+	METHOD a getTextureFromSide (I)I
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a onRandomTick (Lnet/minecraft/a/a/g;IIILjava/util/Random;)V
+	METHOD b randomDisplayTick (Lnet/minecraft/a/a/g;IIILjava/util/Random;)V
+	METHOD d onPlaced (Lnet/minecraft/a/a/g;III)V
+CLASS net/minecraft/a/a/b/q net/minecraft/game/block/container/BlockWithContainer
+	METHOD a_ getContainer ()Lnet/minecraft/a/a/b/a/a;
+	METHOD b onBreak (Lnet/minecraft/a/a/g;III)V
+	METHOD d onPlaced (Lnet/minecraft/a/a/g;III)V
+CLASS net/minecraft/a/a/b/r net/minecraft/game/block/BlockStone
+	METHOD a getItemDropped (ILjava/util/Random;)I
+CLASS net/minecraft/a/a/b/s net/minecraft/game/block/BlockFurnace
 	FIELD a lit Z
-CLASS net/minecraft/a/a/b/t net/minecraft/a/a/b/BlockCrafting
-CLASS net/minecraft/a/a/b/u net/minecraft/a/a/b/BlockGlass
-CLASS net/minecraft/a/a/b/v net/minecraft/a/a/b/BlockShroom
-CLASS net/minecraft/a/a/b/w net/minecraft/a/a/b/BlockSand
-CLASS net/minecraft/a/a/b/x net/minecraft/a/a/b/Block
+	METHOD a getTextureFromSide (I)I
+	METHOD a onRightClick (Lnet/minecraft/a/a/g;IIILnet/minecraft/a/c/e/a;)Z
+	METHOD a_ getContainer ()Lnet/minecraft/a/a/b/a/a;
+	METHOD b randomDisplayTick (Lnet/minecraft/a/a/g;IIILjava/util/Random;)V
+	METHOD d onPlaced (Lnet/minecraft/a/a/g;III)V
+CLASS net/minecraft/a/a/b/t net/minecraft/game/block/BlockCrafting
+	METHOD a getTextureFromSide (I)I
+	METHOD a onRightClick (Lnet/minecraft/a/a/g;IIILnet/minecraft/a/c/e/a;)Z
+CLASS net/minecraft/a/a/b/u net/minecraft/game/block/BlockGlass
+	METHOD a quantityDropped (Ljava/util/Random;)I
+CLASS net/minecraft/a/a/b/v net/minecraft/game/block/BlockShroom
+	METHOD b getSoil (I)Z
+	METHOD e canBlockBePlaced (Lnet/minecraft/a/a/g;III)Z
+CLASS net/minecraft/a/a/b/w net/minecraft/game/block/BlockSand
+	METHOD d onPlaced (Lnet/minecraft/a/a/g;III)V
+	METHOD e tryToFall (Lnet/minecraft/a/a/g;III)V
+CLASS net/minecraft/a/a/b/x net/minecraft/game/block/Block
 	FIELD A sponge Lnet/minecraft/a/a/b/x;
 	FIELD B glass Lnet/minecraft/a/a/b/x;
 	FIELD C woolRed Lnet/minecraft/a/a/b/x;
@@ -187,6 +358,7 @@ CLASS net/minecraft/a/a/b/x net/minecraft/a/a/b/Block
 	FIELD W goldBlock Lnet/minecraft/a/a/b/x;
 	FIELD X ironBlock Lnet/minecraft/a/a/b/x;
 	FIELD Y doubleSlab Lnet/minecraft/a/a/b/x;
+	FIELD Z singleSlab Lnet/minecraft/a/a/b/x;
 	FIELD aA material Lnet/minecraft/a/a/b/n;
 	FIELD aD materialGravel Lnet/minecraft/a/a/b/n;
 	FIELD aE materialGrass Lnet/minecraft/a/a/b/n;
@@ -215,6 +387,7 @@ CLASS net/minecraft/a/a/b/x net/minecraft/a/a/b/Block
 	FIELD as textureIndex I
 	FIELD at id I
 	FIELD b materialWood Lnet/minecraft/a/a/b/n;
+	FIELD e dirtlikeBlocks [Z
 	FIELD i stone Lnet/minecraft/a/a/b/x;
 	FIELD j grass Lnet/minecraft/a/a/b/af;
 	FIELD k dirt Lnet/minecraft/a/a/b/x;
@@ -234,11 +407,42 @@ CLASS net/minecraft/a/a/b/x net/minecraft/a/a/b/Block
 	FIELD y wood Lnet/minecraft/a/a/b/x;
 	FIELD z leaves Lnet/minecraft/a/a/b/x;
 	METHOD a setExplosionResist (F)Lnet/minecraft/a/a/b/x;
+	METHOD a setBoundingBox (FFFFFF)V
+	METHOD a getTextureFromSide (I)I
+	METHOD a getTexture (II)I
+	METHOD a getItemDropped (ILjava/util/Random;)I
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a canBlockStayAt (Lnet/minecraft/a/a/g;III)Z
+	METHOD a onRandomTick (Lnet/minecraft/a/a/g;IIILjava/util/Random;)V
+	METHOD a onRightClick (Lnet/minecraft/a/a/g;IIILnet/minecraft/a/c/e/a;)Z
+	METHOD a setRandomTick (Z)V
 	METHOD b setHardness (F)Lnet/minecraft/a/a/b/x;
-CLASS net/minecraft/a/a/b/y net/minecraft/a/a/b/BlockBooks
-CLASS net/minecraft/a/a/b/z net/minecraft/a/a/b/BlockSapling
+	METHOD b onBreak (Lnet/minecraft/a/a/g;III)V
+	METHOD b randomDisplayTick (Lnet/minecraft/a/a/g;IIILjava/util/Random;)V
+	METHOD c setOpacity (I)Lnet/minecraft/a/a/b/x;
+	METHOD c onBlockBreak (Lnet/minecraft/a/a/g;IIII)V
+	METHOD d onPlaced (Lnet/minecraft/a/a/g;III)V
+CLASS net/minecraft/a/a/b/y net/minecraft/game/block/BlockBooks
+	METHOD <init> (II)V
+		ARG 0 id
+		ARG 1 texture
+	METHOD a getTextureFromSide (I)I
+		ARG 0 side
+	METHOD a quantityDropped (Ljava/util/Random;)I
+CLASS net/minecraft/a/a/b/z net/minecraft/game/block/BlockSapling
+	METHOD a onRandomTick (Lnet/minecraft/a/a/g;IIILjava/util/Random;)V
 CLASS net/minecraft/a/a/c/a net/minecraft/game/level/generator/LevelGenerator
 CLASS net/minecraft/a/a/d/c
+CLASS net/minecraft/a/b/a/a net/minecraft/game/recipe/RecipeArmor
+CLASS net/minecraft/a/b/a/b net/minecraft/game/recipe/Recipe_
+CLASS net/minecraft/a/b/a/c net/minecraft/game/recipe/Recipe1
+CLASS net/minecraft/a/b/a/d net/minecraft/game/recipe/RecipeOreBlock
+CLASS net/minecraft/a/b/a/e net/minecraft/game/recipe/RecipeTool
+CLASS net/minecraft/a/b/a/f net/minecraft/game/recipe/Recipes
+	FIELD b recipes Ljava/util/List;
+CLASS net/minecraft/a/b/a/g net/minecraft/game/recipe/RecipeUseless
+CLASS net/minecraft/a/b/a/h net/minecraft/game/recipe/RecipeSword
+CLASS net/minecraft/a/b/a/i net/minecraft/game/recipe/RecipeComparator
 CLASS net/minecraft/a/c/a/a net/minecraft/game/entity/monster/EntityGiant
 	METHOD a getName ()Ljava/lang/String;
 CLASS net/minecraft/a/c/a/b net/minecraft/game/entity/monster/EntitySpider
@@ -249,6 +453,7 @@ CLASS net/minecraft/a/c/a/c net/minecraft/game/entity/monster/EntitySkeleton
 	METHOD a getName ()Ljava/lang/String;
 	METHOD a SaveNBT (Lcom/a/a/c;)V
 	METHOD b LoadNBT (Lcom/a/a/c;)V
+	METHOD f updateEntity ()V
 CLASS net/minecraft/a/c/a/d net/minecraft/game/entity/monster/EntityCreeper
 	METHOD a getName ()Ljava/lang/String;
 	METHOD a SaveNBT (Lcom/a/a/c;)V
@@ -260,8 +465,10 @@ CLASS net/minecraft/a/c/a/e net/minecraft/game/entity/monster/EntityMonster
 	METHOD a onHit (Lnet/minecraft/a/c/b;I)Z
 	METHOD b LoadNBT (Lcom/a/a/c;)V
 	METHOD b_ update ()V
+	METHOD f updateEntity ()V
 CLASS net/minecraft/a/c/a/f net/minecraft/game/entity/monster/EntityZombie
 	METHOD a getName ()Ljava/lang/String;
+	METHOD f updateEntity ()V
 CLASS net/minecraft/a/c/b/a net/minecraft/game/entity/animal/EntityAnimal
 	METHOD a SaveNBT (Lcom/a/a/c;)V
 	METHOD b LoadNBT (Lcom/a/a/c;)V
@@ -301,20 +508,61 @@ CLASS net/minecraft/a/c/e/a net/minecraft/game/entity/player/EntityPlayer
 	FIELD b inventory Lnet/minecraft/a/c/e/b;
 	METHOD a getName ()Ljava/lang/String;
 	METHOD a SaveNBT (Lcom/a/a/c;)V
+	METHOD a showInventory (Lnet/minecraft/a/b;)V
 	METHOD a onHit (Lnet/minecraft/a/c/b;I)Z
 	METHOD b LoadNBT (Lcom/a/a/c;)V
-CLASS net/minecraft/a/c/e/b net/minecraft/game/entity/player/ContainerInventory
+	METHOD f updateEntity ()V
+	METHOD g_ showCrafting ()V
+CLASS net/minecraft/a/c/e/b net/minecraft/game/entity/player/InventoryPlayer
+	METHOD b getName ()Ljava/lang/String;
+	METHOD c getMaxItemStack ()I
 	METHOD c hasItem (I)Z
-CLASS net/minecraft/a/a/b/aa net/minecraft/a/a/b/BlockWood
-CLASS net/minecraft/a/a/b/ab net/minecraft/a/a/b/BlockFarmland
-CLASS net/minecraft/a/a/b/ac net/minecraft/a/a/b/BlockTorch
-CLASS net/minecraft/a/a/b/ad net/minecraft/a/a/b/BlockFlower
-CLASS net/minecraft/a/a/b/af net/minecraft/a/a/b/BlockGrass
-CLASS net/minecraft/a/a/b/ag net/minecraft/a/a/b/BlockSponge
-CLASS net/minecraft/a/a/b/ah net/minecraft/a/a/b/BlockFire
-CLASS net/minecraft/a/a/b/ai net/minecraft/a/a/b/BlockLiquidSource
-CLASS net/minecraft/a/a/b/aj net/minecraft/a/a/b/BlockSlab
+CLASS net/minecraft/a/a/b/aa net/minecraft/game/block/BlockWood
+	METHOD a getTextureFromSide (I)I
+	METHOD a getItemDropped (ILjava/util/Random;)I
+	METHOD a quantityDropped (Ljava/util/Random;)I
+CLASS net/minecraft/a/a/b/ab net/minecraft/game/block/BlockFarmland
+	METHOD a getTexture (II)I
+	METHOD a getItemDropped (ILjava/util/Random;)I
+	METHOD a onRandomTick (Lnet/minecraft/a/a/g;IIILjava/util/Random;)V
+CLASS net/minecraft/a/a/b/ac net/minecraft/game/block/BlockTorch
+	METHOD a canBlockStayAt (Lnet/minecraft/a/a/g;III)Z
+	METHOD a onRandomTick (Lnet/minecraft/a/a/g;IIILjava/util/Random;)V
+	METHOD b randomDisplayTick (Lnet/minecraft/a/a/g;IIILjava/util/Random;)V
+	METHOD d onPlaced (Lnet/minecraft/a/a/g;III)V
+CLASS net/minecraft/a/a/b/ad net/minecraft/game/block/BlockFlower
+	METHOD a canBlockStayAt (Lnet/minecraft/a/a/g;III)Z
+	METHOD a onRandomTick (Lnet/minecraft/a/a/g;IIILjava/util/Random;)V
+	METHOD b getSoil (I)Z
+	METHOD e canBlockBePlaced (Lnet/minecraft/a/a/g;III)Z
+	METHOD h onNeightbourChange (Lnet/minecraft/a/a/g;III)V
+CLASS net/minecraft/a/a/b/ae net/minecraft/game/block/Block1
+CLASS net/minecraft/a/a/b/af net/minecraft/game/block/BlockGrass
+	METHOD a getTextureFromSide (I)I
+	METHOD a getItemDropped (ILjava/util/Random;)I
+	METHOD a onRandomTick (Lnet/minecraft/a/a/g;IIILjava/util/Random;)V
+CLASS net/minecraft/a/a/b/ag net/minecraft/game/block/BlockSponge
+	METHOD b onBreak (Lnet/minecraft/a/a/g;III)V
+	METHOD d onPlaced (Lnet/minecraft/a/a/g;III)V
+CLASS net/minecraft/a/a/b/ah net/minecraft/game/block/BlockFire
+	FIELD a burnableID [I
+	FIELD b burnableSpeed [I
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a canBlockStayAt (Lnet/minecraft/a/a/g;III)Z
+	METHOD a onRandomTick (Lnet/minecraft/a/a/g;IIILjava/util/Random;)V
+	METHOD b randomDisplayTick (Lnet/minecraft/a/a/g;IIILjava/util/Random;)V
+	METHOD c addBurnable (III)V
+	METHOD d onPlaced (Lnet/minecraft/a/a/g;III)V
+CLASS net/minecraft/a/a/b/ai net/minecraft/game/block/BlockLiquidSource
+	METHOD a onRandomTick (Lnet/minecraft/a/a/g;IIILjava/util/Random;)V
+	METHOD d onPlaced (Lnet/minecraft/a/a/g;III)V
+CLASS net/minecraft/a/a/b/aj net/minecraft/game/block/BlockSlab
+	FIELD a isDouble Z
+	METHOD a getTextureFromSide (I)I
+	METHOD a getItemDropped (ILjava/util/Random;)I
+	METHOD d onPlaced (Lnet/minecraft/a/a/g;III)V
 CLASS net/minecraft/client/d net/minecraft/client/Minecraft
+	METHOD a displayGui (Lnet/minecraft/client/c/i;)V
 CLASS net/minecraft/client/e net/minecraft/client/OS
 	FIELD a LINUX Lnet/minecraft/client/e;
 	FIELD b SOLARIS Lnet/minecraft/client/e;
@@ -343,7 +591,34 @@ CLASS net/minecraft/client/q net/minecraft/client/Options
 CLASS net/minecraft/client/r net/minecraft/client/GuiMainMenu
 	FIELD i splash [Ljava/lang/String;
 	FIELD j currentSplash Ljava/lang/String;
-CLASS net/minecraft/a/a/b/a/b net/minecraft/a/a/b/a/BlockFurnace
+CLASS net/minecraft/a/a/b/a/a net/minecraft/game/block/container/ContainerBlock
+	METHOD a getNBT (Lcom/a/a/c;)V
+	METHOD b saveNBT (Lcom/a/a/c;)V
+	METHOD d tick ()V
+CLASS net/minecraft/a/a/b/a/b net/minecraft/game/block/container/ContainerFurnace
+	FIELD e items [Lnet/minecraft/a/b/k;
+	FIELD f burnTime I
+	FIELD h cookTime I
+	METHOD a getNBT (Lcom/a/a/c;)V
+	METHOD a getFuel (Lnet/minecraft/a/b/k;)I
+	METHOD b getName ()Ljava/lang/String;
+	METHOD b saveNBT (Lcom/a/a/c;)V
+	METHOD c getMaxItemStack ()I
+	METHOD d tick ()V
+	METHOD d getBurnedItems (I)I
+CLASS net/minecraft/a/a/b/a/c net/minecraft/game/block/container/BlockChest
+	METHOD a getNBT (Lcom/a/a/c;)V
+	METHOD b getName ()Ljava/lang/String;
+	METHOD b saveNBT (Lcom/a/a/c;)V
+	METHOD c getMaxItemStack ()I
+CLASS net/minecraft/a/a/c/a/a net/minecraft/game/level/generator/noise/NoisePerlin
+	METHOD a get (DD)D
+CLASS net/minecraft/a/a/c/a/b net/minecraft/game/level/generator/Noise
+	METHOD a get (DD)D
+CLASS net/minecraft/a/a/c/a/c net/minecraft/game/level/generator/noise/NoiseOctaves
+	METHOD a get (DD)D
+CLASS net/minecraft/a/a/c/a/d net/minecraft/game/level/generator/noise/NoiseCombined
+	METHOD a get (DD)D
 CLASS net/minecraft/client/a/d net/minecraft/client/a/Tesselator
 	METHOD a draw (FFF)V
 	METHOD a draw (FFFFF)V
@@ -356,6 +631,9 @@ CLASS net/minecraft/client/c/g net/minecraft/client/gui/GuiOptions
 	FIELD i name Ljava/lang/String;
 CLASS net/minecraft/client/c/i net/minecraft/client/gui/GuiWithButtons
 	FIELD e buttons Ljava/util/List;
+	FIELD g fontRenderer Lnet/minecraft/client/c/j;
+CLASS net/minecraft/client/c/j net/minecraft/client/FontRenderer
+	METHOD b drawString (Ljava/lang/String;III)V
 CLASS net/minecraft/client/c/k net/minecraft/client/gui/Gui
 	METHOD a drawString (Lnet/minecraft/client/c/j;Ljava/lang/String;III)V
 	METHOD b drawTexture (IIIIII)V
@@ -364,6 +642,9 @@ CLASS net/minecraft/client/c/o net/minecraft/client/gui/GuiSave2
 CLASS net/minecraft/client/c/p net/minecraft/client/gui/GuiSave
 CLASS net/minecraft/client/c/q net/minecraft/client/gui/FilenameFilterLevel
 CLASS net/minecraft/client/c/r net/minecraft/client/gui/Button
+CLASS net/minecraft/client/e/a net/minecraft/client/sound/SoundNameAndURL
+CLASS net/minecraft/client/e/b net/minecraft/client/sound/SoundPath
+CLASS net/minecraft/client/e/c net/minecraft/client/sound/SoundRegistry
 CLASS net/minecraft/client/f/a net/minecraft/client/particle/ParticleBubble
 	METHOD b_ update ()V
 CLASS net/minecraft/client/f/b net/minecraft/client/particle/Particle2
@@ -397,10 +678,48 @@ CLASS net/minecraft/client/f/k net/minecraft/client/particle/ParticleBase
 	METHOD a renderParticle (Lnet/minecraft/client/a/d;FFFFFF)V
 	METHOD b LoadNBT (Lcom/a/a/c;)V
 	METHOD b_ update ()V
-CLASS net/minecraft/client/g/a net/minecraft/client/g/EntityLocalPlayer
+CLASS net/minecraft/client/g/a net/minecraft/client/player/EntityLocalPlayer
+	FIELD a controller Lnet/minecraft/client/g/b;
+	FIELD an minecraft Lnet/minecraft/client/d;
 	METHOD a getName ()Ljava/lang/String;
 	METHOD a SaveNBT (Lcom/a/a/c;)V
+	METHOD a showInventory (Lnet/minecraft/a/b;)V
 	METHOD b LoadNBT (Lcom/a/a/c;)V
+	METHOD f updateEntity ()V
+	METHOD g_ showCrafting ()V
+CLASS net/minecraft/client/g/b net/minecraft/client/player/PlayerControllerBase
+CLASS net/minecraft/client/g/c net/minecraft/client/player/PlayerController
+	FIELD e controls Lnet/minecraft/client/q;
+CLASS net/minecraft/client/c/a/a net/minecraft/client/inventory/InventoryCrafting
+	METHOD b getName ()Ljava/lang/String;
+	METHOD c getMaxItemStack ()I
+CLASS net/minecraft/client/c/a/b net/minecraft/client/gui/GuiCrafting
+	METHOD d drawGui ()V
+	METHOD e_ drawStrings ()V
+CLASS net/minecraft/client/c/a/c net/minecraft/client/gui/GuiFurnace
+	FIELD k container Lnet/minecraft/a/a/b/a/b;
+	METHOD d drawGui ()V
+	METHOD e_ drawStrings ()V
+CLASS net/minecraft/client/c/a/d net/minecraft/client/gui/SlotResult
+CLASS net/minecraft/client/c/a/f net/minecraft/client/gui/GuiInventory
+	METHOD d drawGui ()V
+	METHOD e_ drawStrings ()V
+CLASS net/minecraft/client/c/a/g net/minecraft/client/gui/Slot
+CLASS net/minecraft/client/c/a/h net/minecraft/client/inventory/InventoryResult
+	METHOD b getName ()Ljava/lang/String;
+	METHOD c getMaxItemStack ()I
+CLASS net/minecraft/client/c/a/i net/minecraft/client/gui/GuiChest
+	FIELD k chestInv Lnet/minecraft/a/b;
+	FIELD l chestInv2 Lnet/minecraft/a/b;
+	METHOD <init> (Lnet/minecraft/a/b;Lnet/minecraft/a/b;)V
+		ARG 0 chestInv
+		ARG 1 chestInv2
+	METHOD d drawGui ()V
+	METHOD e_ drawStrings ()V
+CLASS net/minecraft/client/c/a/j net/minecraft/client/gui/GuiContainer
+	FIELD j slots Ljava/util/List;
+	METHOD d drawGui ()V
+	METHOD e_ drawStrings ()V
 CLASS net/minecraft/client/MinecraftApplet
 	FIELD a canvas Ljava/awt/Canvas;
 	FIELD c thread Ljava/lang/Thread;
