@@ -619,9 +619,50 @@ CLASS net/minecraft/a/a/c/a/c net/minecraft/game/level/generator/noise/NoiseOcta
 	METHOD a get (DD)D
 CLASS net/minecraft/a/a/c/a/d net/minecraft/game/level/generator/noise/NoiseCombined
 	METHOD a get (DD)D
-CLASS net/minecraft/client/a/d net/minecraft/client/a/Tesselator
+CLASS net/minecraft/client/a/b net/minecraft/client/renderer/WorldRenderer
+CLASS net/minecraft/client/a/d net/minecraft/client/renderer/Tesselator
 	METHOD a draw (FFF)V
 	METHOD a draw (FFFFF)V
+CLASS net/minecraft/client/a/f net/minecraft/client/a/ModelTNT
+CLASS net/minecraft/client/b/a net/minecraft/client/model/ModelSheep
+CLASS net/minecraft/client/b/b net/minecraft/client/model/ModelQuadruped
+	FIELD a body Lnet/minecraft/client/b/c;
+	FIELD b head Lnet/minecraft/client/b/c;
+	FIELD c leg1 Lnet/minecraft/client/b/c;
+	FIELD d leg2 Lnet/minecraft/client/b/c;
+	FIELD e leg3 Lnet/minecraft/client/b/c;
+	FIELD f leg4 Lnet/minecraft/client/b/c;
+	METHOD a setRoatationsAndSizes (FFFFFF)V
+	METHOD b animate (FFFFFF)V
+CLASS net/minecraft/client/b/c net/minecraft/client/model/Cube
+	METHOD a setRotationPoints (FFF)V
+	METHOD a setSizeAndRotation (FFFIIIF)V
+CLASS net/minecraft/client/b/d net/minecraft/client/model/ModelSheepFur
+CLASS net/minecraft/client/b/e net/minecraft/client/model/ModelSpider
+	METHOD a setRoatationsAndSizes (FFFFFF)V
+	METHOD b animate (FFFFFF)V
+CLASS net/minecraft/client/b/f net/minecraft/client/model/ModelPig
+CLASS net/minecraft/client/b/g net/minecraft/client/model/ModelZombie
+	METHOD b animate (FFFFFF)V
+CLASS net/minecraft/client/b/h net/minecraft/client/model/ModelBiped
+	FIELD a head Lnet/minecraft/client/b/c;
+	FIELD b hat Lnet/minecraft/client/b/c;
+	FIELD c body Lnet/minecraft/client/b/c;
+	FIELD d leftArm Lnet/minecraft/client/b/c;
+	FIELD e rightArm Lnet/minecraft/client/b/c;
+	FIELD f leftLeg Lnet/minecraft/client/b/c;
+	FIELD g rightLeg Lnet/minecraft/client/b/c;
+	METHOD a setRoatationsAndSizes (FFFFFF)V
+	METHOD b animate (FFFFFF)V
+CLASS net/minecraft/client/b/i net/minecraft/client/model/Model_
+CLASS net/minecraft/client/b/j net/minecraft/client/model/Model__
+CLASS net/minecraft/client/b/k net/minecraft/client/model/ModelCreeper
+	METHOD a setRoatationsAndSizes (FFFFFF)V
+	METHOD b animate (FFFFFF)V
+CLASS net/minecraft/client/b/l net/minecraft/client/model/Model
+	METHOD a setRoatationsAndSizes (FFFFFF)V
+	METHOD b animate (FFFFFF)V
+CLASS net/minecraft/client/b/m net/minecraft/client/models/ModelSkeleton
 CLASS net/minecraft/client/c/a net/minecraft/client/gui/Button2
 CLASS net/minecraft/client/c/b net/minecraft/client/gui/GuiPause
 CLASS net/minecraft/client/c/d net/minecraft/client/gui/GuiGameOver
@@ -638,6 +679,7 @@ CLASS net/minecraft/client/c/k net/minecraft/client/gui/Gui
 	METHOD a drawString (Lnet/minecraft/client/c/j;Ljava/lang/String;III)V
 	METHOD b drawTexture (IIIIII)V
 CLASS net/minecraft/client/c/l net/minecraft/client/gui/GuiOverlay
+CLASS net/minecraft/client/c/m net/minecraft/client/gui/GuiControls
 CLASS net/minecraft/client/c/o net/minecraft/client/gui/GuiSave2
 CLASS net/minecraft/client/c/p net/minecraft/client/gui/GuiSave
 CLASS net/minecraft/client/c/q net/minecraft/client/gui/FilenameFilterLevel
@@ -690,6 +732,23 @@ CLASS net/minecraft/client/g/a net/minecraft/client/player/EntityLocalPlayer
 CLASS net/minecraft/client/g/b net/minecraft/client/player/PlayerControllerBase
 CLASS net/minecraft/client/g/c net/minecraft/client/player/PlayerController
 	FIELD e controls Lnet/minecraft/client/q;
+CLASS net/minecraft/client/a/a/a net/minecraft/client/renderer/entity/RenderGeneric
+CLASS net/minecraft/client/a/a/b net/minecraft/client/renderer/entity/RenderArrow
+CLASS net/minecraft/client/a/a/c net/minecraft/client/renderer/entity/RenderCreeper
+CLASS net/minecraft/client/a/a/d net/minecraft/client/renderer/entity/RenderTNT
+	FIELD d model Lnet/minecraft/client/a/f;
+CLASS net/minecraft/client/a/a/e net/minecraft/client/renderer/entity/RenderItem
+CLASS net/minecraft/client/a/a/f net/minecraft/client/renderer/entity/RenderEntity
+CLASS net/minecraft/client/a/a/g net/minecraft/client/renderer/entity/RenderPlayer
+	FIELD h armors [Ljava/lang/String;
+CLASS net/minecraft/client/a/a/h net/minecraft/client/renderer/entity/RenderPainting
+CLASS net/minecraft/client/a/a/i net/minecraft/client/renderer/entity/RenderingRegistry
+	METHOD a getRendererForEntity (Lnet/minecraft/a/c/b;)Lnet/minecraft/client/a/a/f;
+CLASS net/minecraft/client/a/a/j net/minecraft/client/renderer/entity/RenderLiving
+	METHOD a model (Lnet/minecraft/client/b/l;)V
+CLASS net/minecraft/client/a/a/k net/minecraft/client/renderer/entity/RenderSheep
+CLASS net/minecraft/client/a/a/l net/minecraft/client/renderer/entity/RenderGiant
+CLASS net/minecraft/client/a/a/m net/minecraft/client/renderer/entity/RenderSpider
 CLASS net/minecraft/client/c/a/a net/minecraft/client/inventory/InventoryCrafting
 	METHOD b getName ()Ljava/lang/String;
 	METHOD c getMaxItemStack ()I
