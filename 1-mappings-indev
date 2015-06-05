@@ -1,6 +1,16 @@
 CLASS a/a net/minecraft/game/MathHelper
 CLASS a/b net/minecraft/client/gui/GuiLoading
-CLASS com/a/a/c com/a/a/NBT
+	METHOD a setString (Ljava/lang/String;)V
+	METHOD b setString2 (Ljava/lang/String;)V
+CLASS com/a/a/a com/nbt/NBTLong
+	METHOD a readByte (Ljava/io/DataInput;)V
+	METHOD a writeByte (Ljava/io/DataOutput;)V
+CLASS com/a/a/b com/nbt/NBTFloat
+	METHOD a readByte (Ljava/io/DataInput;)V
+	METHOD a writeByte (Ljava/io/DataOutput;)V
+CLASS com/a/a/c com/nbt/NBT
+	METHOD a readByte (Ljava/io/DataInput;)V
+	METHOD a writeByte (Ljava/io/DataOutput;)V
 	METHOD a addValue (Ljava/lang/String;B)V
 	METHOD a addValue (Ljava/lang/String;F)V
 	METHOD a addValue (Ljava/lang/String;Lcom/a/a/j;)V
@@ -11,6 +21,34 @@ CLASS com/a/a/c com/a/a/NBT
 	METHOD c getValue (Ljava/lang/String;)S
 	METHOD j getValue (Ljava/lang/String;)Lcom/a/a/f;
 	METHOD k getValue (Ljava/lang/String;)Z
+CLASS com/a/a/d com/nbt/NBTInt
+	METHOD a readByte (Ljava/io/DataInput;)V
+	METHOD a writeByte (Ljava/io/DataOutput;)V
+CLASS com/a/a/e com/nbt/NBTByte
+	METHOD a readByte (Ljava/io/DataInput;)V
+	METHOD a writeByte (Ljava/io/DataOutput;)V
+CLASS com/a/a/f com/nbt/NBTList
+	METHOD a readByte (Ljava/io/DataInput;)V
+	METHOD a writeByte (Ljava/io/DataOutput;)V
+CLASS com/a/a/g com/nbt/NBTDouble
+	METHOD a readByte (Ljava/io/DataInput;)V
+	METHOD a writeByte (Ljava/io/DataOutput;)V
+CLASS com/a/a/h com/nbt/NBTShort
+	METHOD a readByte (Ljava/io/DataInput;)V
+	METHOD a writeByte (Ljava/io/DataOutput;)V
+CLASS com/a/a/i com/nbt/NBTByteArray
+	METHOD a readByte (Ljava/io/DataInput;)V
+	METHOD a writeByte (Ljava/io/DataOutput;)V
+CLASS com/a/a/j com/nbt/NBTSaveable
+	METHOD a getType (B)Lcom/a/a/j;
+	METHOD a readByte (Ljava/io/DataInput;)V
+	METHOD a writeByte (Ljava/io/DataOutput;)V
+CLASS com/a/a/k com/nbt/NBTString
+	METHOD a readByte (Ljava/io/DataInput;)V
+	METHOD a writeByte (Ljava/io/DataOutput;)V
+CLASS com/a/a/l com/nbt/NBTEnd
+	METHOD a readByte (Ljava/io/DataInput;)V
+	METHOD a writeByte (Ljava/io/DataOutput;)V
 CLASS net/minecraft/a/a net/minecraft/client/inventory/InventoryBase
 	METHOD b getName ()Ljava/lang/String;
 	METHOD c getMaxItemStack ()I
@@ -19,6 +57,7 @@ CLASS net/minecraft/a/b net/minecraft/client/inventory/Inventory
 	METHOD c getMaxItemStack ()I
 CLASS net/minecraft/a/a/a net/minecraft/game/level/LevelLoader
 	METHOD a load (Ljava/io/InputStream;)Lnet/minecraft/a/a/g;
+	METHOD a loadEntity (Lnet/minecraft/a/a/g;Ljava/lang/String;)Lnet/minecraft/a/c/b;
 CLASS net/minecraft/a/a/b net/minecraft/game/level/MobSpawner
 	FIELD a level Lnet/minecraft/a/a/g;
 	METHOD <init> (Lnet/minecraft/a/a/g;)V
@@ -30,10 +69,13 @@ CLASS net/minecraft/a/a/e net/minecraft/game/level/Unknown3
 CLASS net/minecraft/a/a/g net/minecraft/game/level/Level
 	FIELD E type I
 	FIELD O blocks [S
+	FIELD f name Ljava/lang/String;
+	FIELD h createTime J
 	FIELD i maxX I
 	FIELD j maxY I
 	FIELD k maxZ I
 	FIELD m defaultFluid I
+	FIELD y player Lnet/minecraft/a/c/e;
 	METHOD a load ()V
 	METHOD a playSound (FFFLjava/lang/String;FF)V
 	METHOD a generate (III[B[B)V
@@ -245,6 +287,13 @@ CLASS net/minecraft/a/c/e net/minecraft/game/entity/EntityLiving
 	METHOD g getLivingSound ()Ljava/lang/String;
 	METHOD h getHurtSound ()Ljava/lang/String;
 	METHOD i getDeathSound ()Ljava/lang/String;
+CLASS net/minecraft/a/d/a net/minecraft/level/something/Something4
+CLASS net/minecraft/a/d/b net/minecraft/level/something/Something5
+CLASS net/minecraft/a/d/c net/minecraft/level/something/Something6
+CLASS net/minecraft/a/a/a/a net/minecraft/level/something/Something7
+CLASS net/minecraft/a/a/a/b net/minecraft/level/something/Something8
+CLASS net/minecraft/a/a/a/c net/minecraft/level/something/Something9
+CLASS net/minecraft/a/a/a/d net/minecraft/level/something/Something10
 CLASS net/minecraft/a/a/b/a net/minecraft/game/block/BlockChest
 	METHOD a getTextureFromSide (I)I
 	METHOD a canBlockStayAt (Lnet/minecraft/a/a/g;III)Z
@@ -432,7 +481,18 @@ CLASS net/minecraft/a/a/b/y net/minecraft/game/block/BlockBooks
 CLASS net/minecraft/a/a/b/z net/minecraft/game/block/BlockSapling
 	METHOD a onRandomTick (Lnet/minecraft/a/a/g;IIILjava/util/Random;)V
 CLASS net/minecraft/a/a/c/a net/minecraft/game/level/generator/LevelGenerator
-CLASS net/minecraft/a/a/d/c
+	FIELD d levelType I
+	FIELD e guiLoading La/b;
+	FIELD i rnd Ljava/util/Random;
+	FIELD j blocks [B
+	FIELD p blocks [I
+	METHOD a setNextPhase (F)V
+	METHOD a generate (Ljava/lang/String;III)Lnet/minecraft/a/a/g;
+	METHOD a populateFlowers (Lnet/minecraft/a/a/g;Lnet/minecraft/a/a/b/ad;I)V
+CLASS net/minecraft/a/a/d/a net/minecraft/level/something/Something1
+CLASS net/minecraft/a/a/d/b net/minecraft/level/something/Something2
+CLASS net/minecraft/a/a/d/c net/minecraft/level/something/SomethingList
+CLASS net/minecraft/a/a/d/d net/minecraft/level/something/Something3
 CLASS net/minecraft/a/b/a/a net/minecraft/game/recipe/RecipeArmor
 CLASS net/minecraft/a/b/a/b net/minecraft/game/recipe/Recipe_
 CLASS net/minecraft/a/b/a/c net/minecraft/game/recipe/Recipe1
@@ -561,7 +621,17 @@ CLASS net/minecraft/a/a/b/aj net/minecraft/game/block/BlockSlab
 	METHOD a getTextureFromSide (I)I
 	METHOD a getItemDropped (ILjava/util/Random;)I
 	METHOD d onPlaced (Lnet/minecraft/a/a/g;III)V
+CLASS net/minecraft/client/a net/minecraft/client/GuiLevelLoading
+	METHOD a setString (Ljava/lang/String;)V
+	METHOD b setString2 (Ljava/lang/String;)V
+CLASS net/minecraft/client/c net/minecraft/client/MaybeLighting
 CLASS net/minecraft/client/d net/minecraft/client/Minecraft
+	FIELD M applet Lnet/minecraft/client/MinecraftApplet;
+	FIELD d level Lnet/minecraft/a/a/g;
+	FIELD f player Lnet/minecraft/client/g/a;
+	FIELD p currentGui Lnet/minecraft/client/a;
+	METHOD a generateLevel (IIII)V
+	METHOD a setLevel (Lnet/minecraft/a/a/g;)V
 	METHOD a displayGui (Lnet/minecraft/client/c/i;)V
 CLASS net/minecraft/client/e net/minecraft/client/OS
 	FIELD a LINUX Lnet/minecraft/client/e;
@@ -569,11 +639,17 @@ CLASS net/minecraft/client/e net/minecraft/client/OS
 	FIELD c WINDOWS Lnet/minecraft/client/e;
 	FIELD d MACOS Lnet/minecraft/client/e;
 	FIELD e UNKNOWN Lnet/minecraft/client/e;
+CLASS net/minecraft/client/f net/minecraft/client/PlayerLoader
+	METHOD a loadEntity (Lnet/minecraft/a/a/g;Ljava/lang/String;)Lnet/minecraft/a/c/b;
+		ARG 1 name
+CLASS net/minecraft/client/g net/minecraft/client/Smthng1
 CLASS net/minecraft/client/h net/minecraft/client/Option
 CLASS net/minecraft/client/i net/minecraft/client/UselessClass
 CLASS net/minecraft/client/j net/minecraft/client/SoundDownloader
+CLASS net/minecraft/client/k net/minecraft/client/Smtng2
 CLASS net/minecraft/client/l net/minecraft/client/BlockList
 CLASS net/minecraft/client/m net/minecraft/client/CursorMover
+CLASS net/minecraft/client/n net/minecraft/client/SomeThread
 CLASS net/minecraft/client/o net/minecraft/client/OSValidator
 CLASS net/minecraft/client/p net/minecraft/client/SomeError
 CLASS net/minecraft/client/q net/minecraft/client/Options
@@ -591,6 +667,8 @@ CLASS net/minecraft/client/q net/minecraft/client/Options
 CLASS net/minecraft/client/r net/minecraft/client/GuiMainMenu
 	FIELD i splash [Ljava/lang/String;
 	FIELD j currentSplash Ljava/lang/String;
+	METHOD a drawGui (IIF)V
+	METHOD a onButtonClick (Lnet/minecraft/client/c/r;)V
 CLASS net/minecraft/a/a/b/a/a net/minecraft/game/block/container/ContainerBlock
 	METHOD a getNBT (Lcom/a/a/c;)V
 	METHOD b saveNBT (Lcom/a/a/c;)V
@@ -619,11 +697,21 @@ CLASS net/minecraft/a/a/c/a/c net/minecraft/game/level/generator/noise/NoiseOcta
 	METHOD a get (DD)D
 CLASS net/minecraft/a/a/c/a/d net/minecraft/game/level/generator/noise/NoiseCombined
 	METHOD a get (DD)D
+CLASS net/minecraft/client/a/a net/minecraft/client/renderer/PlayerComparator
 CLASS net/minecraft/client/a/b net/minecraft/client/renderer/WorldRenderer
+CLASS net/minecraft/client/a/c net/minecraft/client/renderer/Texture
 CLASS net/minecraft/client/a/d net/minecraft/client/renderer/Tesselator
 	METHOD a draw (FFF)V
 	METHOD a draw (FFFFF)V
-CLASS net/minecraft/client/a/f net/minecraft/client/a/ModelTNT
+CLASS net/minecraft/client/a/e net/minecraft/client/renderer/LargeScreenshotRenderer
+	FIELD b minecraft Lnet/minecraft/client/d;
+	METHOD b grabLargeScreenshot ()V
+CLASS net/minecraft/client/a/f net/minecraft/client/renderer/BlockRenderer
+CLASS net/minecraft/client/a/g net/minecraft/client/renderer/RenderSomething
+CLASS net/minecraft/client/a/h net/minecraft/client/renderer/RenderSomething2
+CLASS net/minecraft/client/a/i net/minecraft/client/renderer/RenderSomething3
+CLASS net/minecraft/client/a/k net/minecraft/client/renderer/renderer/RenderSomething3
+CLASS net/minecraft/client/a/l net/minecraft/client/renderer/PlayerComparator2
 CLASS net/minecraft/client/b/a net/minecraft/client/model/ModelSheep
 CLASS net/minecraft/client/b/b net/minecraft/client/model/ModelQuadruped
 	FIELD a body Lnet/minecraft/client/b/c;
@@ -665,25 +753,61 @@ CLASS net/minecraft/client/b/l net/minecraft/client/model/Model
 CLASS net/minecraft/client/b/m net/minecraft/client/models/ModelSkeleton
 CLASS net/minecraft/client/c/a net/minecraft/client/gui/Button2
 CLASS net/minecraft/client/c/b net/minecraft/client/gui/GuiPause
+	METHOD a drawGui (IIF)V
+	METHOD a onButtonClick (Lnet/minecraft/client/c/r;)V
+CLASS net/minecraft/client/c/c net/minecraft/client/gui/Gui_
+	METHOD a drawGui (IIF)V
 CLASS net/minecraft/client/c/d net/minecraft/client/gui/GuiGameOver
+	METHOD a drawGui (IIF)V
+	METHOD a onButtonClick (Lnet/minecraft/client/c/r;)V
 CLASS net/minecraft/client/c/e net/minecraft/client/gui/GuiLoad
+	METHOD a drawGui (IIF)V
+	METHOD a onButtonClick (Lnet/minecraft/client/c/r;)V
 CLASS net/minecraft/client/c/g net/minecraft/client/gui/GuiOptions
 	FIELD a previousGui Lnet/minecraft/client/c/i;
 	FIELD i name Ljava/lang/String;
+	METHOD a drawGui (IIF)V
+	METHOD a onButtonClick (Lnet/minecraft/client/c/r;)V
+CLASS net/minecraft/client/c/h net/minecraft/client/gui/Gui__
 CLASS net/minecraft/client/c/i net/minecraft/client/gui/GuiWithButtons
+	FIELD b minecraft Lnet/minecraft/client/d;
 	FIELD e buttons Ljava/util/List;
 	FIELD g fontRenderer Lnet/minecraft/client/c/j;
+	METHOD a drawGui (IIF)V
+	METHOD a onButtonClick (Lnet/minecraft/client/c/r;)V
 CLASS net/minecraft/client/c/j net/minecraft/client/FontRenderer
 	METHOD b drawString (Ljava/lang/String;III)V
 CLASS net/minecraft/client/c/k net/minecraft/client/gui/Gui
+	METHOD a drawGradient (IIIIII)V
 	METHOD a drawString (Lnet/minecraft/client/c/j;Ljava/lang/String;III)V
 	METHOD b drawTexture (IIIIII)V
 CLASS net/minecraft/client/c/l net/minecraft/client/gui/GuiOverlay
 CLASS net/minecraft/client/c/m net/minecraft/client/gui/GuiControls
+	METHOD a drawGui (IIF)V
+	METHOD a onButtonClick (Lnet/minecraft/client/c/r;)V
+CLASS net/minecraft/client/c/n net/minecraft/client/gui/GuiLevelType
+	FIELD a prevGui Lnet/minecraft/client/c/i;
+	FIELD i terrainShape [Ljava/lang/String;
+	FIELD j shape [Ljava/lang/String;
+	FIELD k size [Ljava/lang/String;
+	FIELD l type [Ljava/lang/String;
+	FIELD m selectedTerrainShape I
+	FIELD n selectedShape I
+	FIELD o selectedSize I
+	FIELD p selectedType I
+	METHOD a drawGui (IIF)V
+	METHOD a onButtonClick (Lnet/minecraft/client/c/r;)V
 CLASS net/minecraft/client/c/o net/minecraft/client/gui/GuiSave2
 CLASS net/minecraft/client/c/p net/minecraft/client/gui/GuiSave
+	METHOD a drawGui (IIF)V
+	METHOD a onButtonClick (Lnet/minecraft/client/c/r;)V
 CLASS net/minecraft/client/c/q net/minecraft/client/gui/FilenameFilterLevel
 CLASS net/minecraft/client/c/r net/minecraft/client/gui/Button
+	FIELD a string Ljava/lang/String;
+	FIELD b id I
+CLASS net/minecraft/client/d/a net/minecraft/client/idontknow/IDontKnow1
+CLASS net/minecraft/client/d/b net/minecraft/client/idontknow/IDontKnow2
+CLASS net/minecraft/client/d/c net/minecraft/client/idontknow/IDontKnow3
 CLASS net/minecraft/client/e/a net/minecraft/client/sound/SoundNameAndURL
 CLASS net/minecraft/client/e/b net/minecraft/client/sound/SoundPath
 CLASS net/minecraft/client/e/c net/minecraft/client/sound/SoundRegistry
@@ -749,6 +873,23 @@ CLASS net/minecraft/client/a/a/j net/minecraft/client/renderer/entity/RenderLivi
 CLASS net/minecraft/client/a/a/k net/minecraft/client/renderer/entity/RenderSheep
 CLASS net/minecraft/client/a/a/l net/minecraft/client/renderer/entity/RenderGiant
 CLASS net/minecraft/client/a/a/m net/minecraft/client/renderer/entity/RenderSpider
+CLASS net/minecraft/client/a/b/a net/minecraft/client/renderer/SomeArrays
+CLASS net/minecraft/client/a/b/b net/minecraft/client/renderer/FloatArrays
+CLASS net/minecraft/client/a/b/c net/minecraft/client/renderer/Something1
+CLASS net/minecraft/client/a/b/d net/minecraft/client/renderer/Something2
+CLASS net/minecraft/client/a/b/e net/minecraft/client/renderer/Something3
+CLASS net/minecraft/client/a/c/a net/minecraft/client/renderer/block/SpecialTextureWater
+	METHOD a render ()V
+CLASS net/minecraft/client/a/c/b net/minecraft/client/renderer/block/SpecialTexture
+	METHOD a render ()V
+CLASS net/minecraft/client/a/c/c net/minecraft/client/renderer/block/SpecialTextureGears
+	METHOD a render ()V
+CLASS net/minecraft/client/a/c/d net/minecraft/client/renderer/block/SpecialTextureLava
+	METHOD a render ()V
+CLASS net/minecraft/client/a/c/e net/minecraft/client/renderer/block/SpecialTextureFire
+	METHOD a render ()V
+CLASS net/minecraft/client/a/c/f net/minecraft/client/renderer/block/SpecialTextureWater2
+	METHOD a render ()V
 CLASS net/minecraft/client/c/a/a net/minecraft/client/inventory/InventoryCrafting
 	METHOD b getName ()Ljava/lang/String;
 	METHOD c getMaxItemStack ()I
@@ -761,6 +902,7 @@ CLASS net/minecraft/client/c/a/c net/minecraft/client/gui/GuiFurnace
 	METHOD e_ drawStrings ()V
 CLASS net/minecraft/client/c/a/d net/minecraft/client/gui/SlotResult
 CLASS net/minecraft/client/c/a/f net/minecraft/client/gui/GuiInventory
+	METHOD a drawGui (IIF)V
 	METHOD d drawGui ()V
 	METHOD e_ drawStrings ()V
 CLASS net/minecraft/client/c/a/g net/minecraft/client/gui/Slot
@@ -777,6 +919,7 @@ CLASS net/minecraft/client/c/a/i net/minecraft/client/gui/GuiChest
 	METHOD e_ drawStrings ()V
 CLASS net/minecraft/client/c/a/j net/minecraft/client/gui/GuiContainer
 	FIELD j slots Ljava/util/List;
+	METHOD a drawGui (IIF)V
 	METHOD d drawGui ()V
 	METHOD e_ drawStrings ()V
 CLASS net/minecraft/client/MinecraftApplet
